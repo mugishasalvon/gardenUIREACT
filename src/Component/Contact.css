@@ -1,0 +1,50 @@
+/* Section setup */
+.contact-section {
+  padding: 60px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 42px;
+  margin-bottom: 30px;
+  color: #2e7d32; /* green theme */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  width: 100%;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(46, 125, 50, 0.4);
+}
+
+.contact-card p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.contact-card a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-card a:hover {
+  color: #1b5e20;
+  text-decoration: underline;
+}
+
+

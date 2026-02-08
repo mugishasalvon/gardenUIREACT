@@ -1,0 +1,65 @@
+.signup-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./kigali.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.signup-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.signup-container {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+}
+
+.signup-box {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  padding: 40px 30px;
+  animation: slideUp 0.5s ease-out;
+}
+
+.signup-box h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.signup-subtitle {
+  color: #666;
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.signup-form { display:flex; flex-direction:column }
+.form-group { margin-bottom:16px }
+.form-group label { display:block; margin-bottom:8px; color:#333; font-weight:600; font-size:14px }
+.form-group input { width:100%; padding:12px 14px; border:2px solid #e0e0e0; border-radius:8px; font-size:14px; box-sizing:border-box }
+.form-group input:focus { outline:none; border-color:#667eea; box-shadow:0 0 0 3px rgba(102,126,234,0.08) }
+.error-message { background:#ffebee; color:#c62828; padding:12px; border-radius:8px; margin-bottom:12px; font-size:14px; border-left:4px solid #c62828 }
+.signup-btn { background: linear-gradient(135deg,#667eea 0%,#764ba2 100%); color:#fff; padding:12px; border:none; border-radius:8px; font-size:16px; font-weight:600; cursor:pointer }
+.signup-footer { margin-top:18px; text-align:center; border-top:1px solid #e0e0e0; padding-top:16px }
+.signup-footer p { font-size:14px; margin:8px 0; color:#666 }
+.signup-footer a { color:#667eea; text-decoration:none; font-weight:600 }
+
+@keyframes slideUp { from { opacity:0; transform:translateY(30px)} to { opacity:1; transform:translateY(0)} }
+
+@media (max-width:480px){ .signup-box{ padding:30px 20px } .signup-box h1{ font-size:24px } .form-group input{ padding:10px 12px } .signup-btn{ padding:11px; font-size:15px } }
