@@ -1,8 +1,4 @@
-# TODO: Implement Responsive Modern Web App Layout
+# TODO: Make .topbar Fixed
 
-- [ ] Create Header.jsx with logo and "Welcome to Garden TSS"
-- [ ] Create Sidebar.jsx with navigation links
-- [ ] Update App.jsx to include Header and Sidebar in responsive layout
-- [ ] Update App.css with modern responsive styles
-- [ ] Remove or repurpose Nav.jsx
-- [ ] Test layout responsiveness and navigation
+- [x] Edit src/Component/Sidebar.css to add position: fixed; top: 0; width: 100%; to .topbar class.
+- [x] Run the app to verify the topbar is now fixed at the top.
