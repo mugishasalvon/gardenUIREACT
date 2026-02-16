@@ -22,7 +22,7 @@ function ForgetPassword() {
 
     setError("");
     setMessage("If an account exists for this email, a reset link has been sent.");
-    setTimeout(() => navigate("/login"), 2200);
+    setTimeout(() => navigate("/"), 2200);
   };
 
   return (
@@ -52,7 +52,7 @@ function ForgetPassword() {
 
           <div className="forgot-footer">
             <p>
-              Remembered your password? <a href="/login">Login</a>
+              Remembered your password? <a href="/">Login</a>
             </p>
           </div>
         </div>

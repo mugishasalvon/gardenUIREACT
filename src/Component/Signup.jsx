@@ -10,7 +10,7 @@ function Signup() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name || !email || !password || !confirm) {
       setError("Please fill in all fields");
@@ -30,9 +30,28 @@ function Signup() {
       return;
     }
 
-    setError("");
-    console.log("Signup data:", { name, email, password });
-    navigate("/login");
+    try {
+      const response = await fetch("http://localhost:5000/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ username: name, email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setError("");
+        console.log("Signup success:", data);
+        navigate("/");
+      } else {
+        setError(data.message || "Signup failed");
+      }
+    } catch (err) {
+      console.error("Signup error:", err);
+      setError("Something went wrong. Please try again later.");
+    }
   };
 
   return (
@@ -93,7 +112,7 @@ function Signup() {
 
           <div className="signup-footer">
             <p>
-              Already have an account? <a href="/login">Login here</a>
+              Already have an account? <a href="/">Login here</a>
             </p>
           </div>
         </div>

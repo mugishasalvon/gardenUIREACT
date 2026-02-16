@@ -10,10 +10,10 @@ function Navbar() {
       <h2 className="logo">Garden TVET School</h2>
 
       <nav className={open ? "nav-links open" : "nav-links"}>
-        <Link to="/">Home</Link>
+        <Link to="/home">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
-        <Link to="/login">Logout</Link>
+        <Link to="/">Logout</Link>
       </nav>
 
       <div className="hamburger" onClick={() => setOpen(!open)}>

@@ -7,6 +7,7 @@ import About from "./Component/About";
 import Login from "./Component/Login";
 import Signup from "./Component/Signup";
 import ForgetPassword from "./Component/ForgetPassword";
+import AdminDashboard from "./Component/AdminDashboard";
 import "./App.css";
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
 
 function Main() {
   const location = useLocation();
-  const hideSidebarRoutes = ["/login", "/signup", "/forgot"];
+  const hideSidebarRoutes = ["/", "/signup", "/forgot"];
   const hideSidebar = hideSidebarRoutes.includes(location.pathname);
 
   return (
@@ -28,12 +29,13 @@ function Main() {
 
       <div className="main-content">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/forgot" element={<ForgetPassword />} />
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
       </div>
 

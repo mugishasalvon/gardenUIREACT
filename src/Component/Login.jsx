@@ -8,7 +8,7 @@ function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Basic validation
@@ -24,10 +24,36 @@ function Login() {
       return;
     }
 
-    setError("");
-    console.log("Login attempt:", { email, password });
-    // Redirect to home page
-    navigate("/");
+    try {
+      const response = await fetch("http://localhost:5000/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setError("");
+        console.log("Login success:", data);
+        // Store token and user info
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("user", JSON.stringify(data.user));
+        // Redirect based on admin status
+        if (data.user.is_admin) {
+          navigate("/admin");
+        } else {
+          navigate("/home");
+        }
+      } else {
+        setError(data.message || "Login failed");
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      setError("Something went wrong. Please try again later.");
+    }
   };
 
   return (
